@@ -1,6 +1,6 @@
 
 var gulp        = require('gulp'),
-    $           = require('gulp-load-plugins'),
+    $           = require('gulp-load-plugins')(),
 
     // TODO: remove
     sequence    = require('gulp-sequence'),
@@ -18,21 +18,44 @@ var gulp        = require('gulp'),
     lazypipe    = require('lazypipe'),
     del         = require('del'),
     browserSync = require('browser-sync'),
-    reload      = browserSync.reload,
-    pkg         = require('./package.json');
+    reload      = browserSync.reload;
+
+    $.pkg         = require('./package.json');
+
+    // shared streams
+    $.streams     = {};
 
 //------------------------------------------------------------------------------
-// utils
+// @begin: utils
+(function() {
 
-// TODO: use gulp-util
+/**
+  * Log a message or series of messages using chalk's blue color.
+  * Can pass in a string, object or array.
+  */
+$.log = function(msg) {
+  if (typeof(msg) === 'object') {
+    for (var item in msg) {
+      if (msg.hasOwnProperty(item)) {
+        $.util.log($.util.colors.blue(msg[item]));
+      }
+    }
+  } else {
+    $.util.log($.util.colors.blue(msg));
+  }
+};
 
-function projectInfoMsg() {
-  console.log('');
-  console.log('project: ' + pkg.name + ' v' + pkg.version);
-  console.log('description: ' + pkg.description);
-  console.log('');
-}
+//---
 
+$.projectInfoMsg = function() {
+  $.log('');
+  $.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
+  $.log('description: ' + $.pkg.description);
+  $.log('');
+};
+
+})();
+// @end: utils
 //------------------------------------------------------------------------------
 // configs
 
@@ -238,16 +261,22 @@ gulp.task('wf:project:css', function( done ) {
 //------------------------------------------------------------------------------
 // @begin: main
 
+// TODO: remove
+gulp.task('temp', function() {
+  $.projectInfoMsg();
+});
+
+
 gulp.task('default', ['watch'], function() {
-  projectInfoMsg();
+  $.projectInfoMsg();
 });
 
 gulp.task('release', ['build'], function() {
-  projectInfoMsg();
+  $.projectInfoMsg();
 });
 
 gulp.task('preview', ['webserver:dist'], function() {
-  projectInfoMsg();
+  $.projectInfoMsg();
 });
 
 // @end: main
