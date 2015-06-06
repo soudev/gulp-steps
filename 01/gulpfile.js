@@ -1,6 +1,6 @@
 
 var gulp        = require('gulp'),
-    sequence    = require('gulp-sequence'), // TODO: check if is needed
+    sequence    = require('gulp-sequence'),
     jshint      = require('gulp-jshint'), // jshint-stylish
     lintspaces  = require('gulp-lintspaces'),
     rev         = require('gulp-rev'),
@@ -30,7 +30,25 @@ function projectInfoMsg() {
 // @begin: gulp tasks ==========================================================
 //==============================================================================
 // clean
-gulp.task('clean', del.bind(null, [ 'dist' ]));
+gulp.task('clean:dist', del.bind(null, [ 'dist' ]));
+
+gulp.task('clean:bower', del.bind(null, [ '.local/bower' ]));
+
+gulp.task('clean', ['clean:dist', 'clean:bower']);
+
+//------------------------------------------------------------------------------
+// bower
+gulp.task('bower:jquery', function() {
+  return gulp.src('bower_components/jquery/dist/*.{js,map}')
+    .pipe(gulp.dest('.local/bower/vendor/jquery'))
+});
+
+gulp.task('bower:dev', sequence('clean:bower', 'bower:jquery'));
+
+gulp.task('bower:dist', ['bower:dev'], function() {
+  return gulp.src('.local/bower/**/*')
+    .pipe(gulp.dest('dist'));
+});
 
 //------------------------------------------------------------------------------
 // jshint
@@ -53,7 +71,7 @@ gulp.task('validate', ['jshint', 'lintspaces']);
 
 //------------------------------------------------------------------------------
 // @begin: build
-gulp.task('build', ['clean', 'validate'], function() {
+gulp.task('build:index', function() {
 
   var jsFilter       = filter( '**/*.js' ),
       cssFilter      = filter( '**/*.css' ),
@@ -82,12 +100,34 @@ gulp.task('build', ['clean', 'validate'], function() {
     .pipe( gulp.dest('dist') );
 
 });
+
+gulp.task('build', sequence(['clean:dist', 'validate'], ['build:index', 'bower:dist']));
+
 // @end: build
 //------------------------------------------------------------------------------
 // webserver
-gulp.task('webserver:dist', ['build'], function() { console.log('TODO: define'); });
+gulp.task('webserver:dist', ['build'], function() {
 
-gulp.task('webserver:dev', ['validate'], function() { console.log('TODO: define'); });
+  browserSync({
+    ui: false,
+    port: 1337,
+    server:{
+      baseDir: 'dist'
+    }
+  });
+
+});
+
+gulp.task('webserver:dev', ['validate', 'bower:dev'], function() {
+
+  browserSync({
+    port: 1337,
+    server:{
+      baseDir: ['src', '.local/bower']
+    }
+  });
+
+});
 
 //------------------------------------------------------------------------------
 // watch
