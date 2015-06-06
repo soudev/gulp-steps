@@ -3,16 +3,7 @@ var gulp        = require('gulp'),
     $           = require('gulp-load-plugins')(),
 
     // TODO: remove
-    sequence    = require('gulp-sequence'),
-    jshint      = require('gulp-jshint'), // jshint-stylish
-    lintspaces  = require('gulp-lintspaces'),
-    rev         = require('gulp-rev'),
-    revReplace  = require('gulp-rev-replace'),
-    useref      = require('gulp-useref'),
-    filter      = require('gulp-filter'),
-    uglify      = require('gulp-uglify'),
-    csso        = require('gulp-csso'),
-    minifyHtml  = require('gulp-minify-html');
+    sequence    = require('gulp-sequence');
 
     //---
 
@@ -185,35 +176,35 @@ gulp.task('validate', ['jshint', 'lintspaces']);
 
 gulp.task('build:index', function() {
 
-  var jsFilter       = filter( '**/*.js' ),
-      cssFilter      = filter( '**/*.css' ),
-      htmlFilter     = filter( '**/*.html' ),
-      userefAssets   = useref.assets(),
+  var jsFilter       = $.filter( '**/*.js' ),
+      cssFilter      = $.filter( '**/*.css' ),
+      htmlFilter     = $.filter( '**/*.html' ),
+      userefAssets   = $.useref.assets(),
       minifyHtmlOpts = {
         conditionals: true,
         spare:true
       };
 
-  return gulp.src( 'src/index.html' )
+  return gulp.src( $.config.project.index )
     .pipe( userefAssets ) // Concatenate with gulp-useref
     .pipe( jsFilter )
-    .pipe( uglify() ) // Minify any javascript sources
+    .pipe( $.uglify() ) // Minify any javascript sources
     .pipe( jsFilter.restore() )
     .pipe( cssFilter )
-    .pipe( csso() ) // Minify any CSS sources
+    .pipe( $.csso() ) // Minify any CSS sources
     .pipe( cssFilter.restore() )
-    .pipe( rev() ) // Rename the concatenated files
+    .pipe( $.rev() ) // Rename the concatenated files
     .pipe( userefAssets.restore() )
-    .pipe( useref() )
-    .pipe( revReplace() ) // Substitute in new filenames
+    .pipe( $.useref() )
+    .pipe( $.revReplace() ) // Substitute in new filenames
     .pipe( htmlFilter )
-    .pipe( minifyHtml( minifyHtmlOpts ) )
+    .pipe( $.minifyHtml( minifyHtmlOpts ) )
     .pipe( htmlFilter.restore() )
-    .pipe( gulp.dest('dist') );
+    .pipe( gulp.dest( $.config.paths.dist ) );
 
 });
 
-gulp.task('build', sequence(['clean:dist', 'validate'], ['build:index', 'bower:dist']));
+gulp.task('build', $.sequence(['clean:dist', 'validate'], ['build:index', 'bower:dist']));
 
 // @end: build
 //------------------------------------------------------------------------------
