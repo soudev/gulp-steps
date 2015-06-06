@@ -176,10 +176,6 @@ gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
 // @end: lintspaces
 //------------------------------------------------------------------------------
-// validate
-gulp.task('validate', ['jshint', 'lintspaces']);
-
-//------------------------------------------------------------------------------
 // @begin: build
 
 gulp.task('build:index', function() {
@@ -298,7 +294,9 @@ gulp.task('wf:project:css', function( done ) {
 
 // @end: watch
 //------------------------------------------------------------------------------
-// @begin: default (main tasks)
+// @begin: main
+
+gulp.task('validate', ['jshint', 'lintspaces']);
 
 gulp.task('default', ['watch'], function() {
   $.projectInfoMsg();
@@ -312,7 +310,7 @@ gulp.task('preview', ['webserver:dist'], function() {
   $.projectInfoMsg();
 });
 
-// @end: default (main tasks)
+// @end: main
 //==============================================================================
 // @end: gulp tasks ============================================================
 //==============================================================================
