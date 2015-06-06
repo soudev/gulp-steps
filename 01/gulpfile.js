@@ -77,11 +77,22 @@ gulp.task('jshint', ['jshint:tools', 'jshint:project']);
 //------------------------------------------------------------------------------
 // @begin: lintspaces
 
-gulp.task('lintspaces:tools', function() { console.log('TODO: define'); });
+gulp.task('lintspaces:tools', function() {
+  return gulp.src('gulpfile.js')
+    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
+    .pipe( lintspaces.reporter() );
+});
+
 gulp.task('lintspaces:project:js', function() { console.log('TODO: define'); });
 gulp.task('lintspaces:project:css', function() { console.log('TODO: define'); });
 gulp.task('lintspaces:project:html', function() { console.log('TODO: define'); });
-gulp.task('lintspaces:project', ['lintspaces:project:js', 'lintspaces:project:css', 'lintspaces:project:html']);
+
+gulp.task('lintspaces:project', [
+  'lintspaces:project:js',
+  'lintspaces:project:css',
+  'lintspaces:project:html'
+]);
+
 gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
 // @end: lintspaces
