@@ -43,7 +43,7 @@ gulp.task('clean', ['clean:dist', 'clean:bower']);
 
 gulp.task('bower:jquery', function() {
   return gulp.src('bower_components/jquery/dist/*.{js,map}')
-    .pipe(gulp.dest('.local/bower/vendor/jquery'))
+    .pipe(gulp.dest('.local/bower/vendor/jquery'));
 });
 
 gulp.task('bower:dev', sequence('clean:bower', 'bower:jquery'));
@@ -57,8 +57,15 @@ gulp.task('bower:dist', ['bower:dev'], function() {
 //------------------------------------------------------------------------------
 // @begin: jshint
 
-gulp.task('jshint:tools', function() { console.log('TODO: define'); });
+gulp.task('jshint:tools', function() {
+  return gulp.src('gulpfile.js')
+    .pipe( jshint() )
+    .pipe( jshint.reporter('jshint-stylish') )
+    .pipe( jshint.reporter('fail') );
+});
+
 gulp.task('jshint:project', function() { console.log('TODO: define'); });
+
 gulp.task('jshint', ['jshint:tools', 'jshint:project']);
 
 // @end: jshint
