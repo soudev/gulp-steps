@@ -61,9 +61,10 @@ $.projectInfoMsg = function() {
 (function() {
 
   var paths = {
-    src        : 'src',
-    dist       : 'dist',
-    bower      : {
+    editorconfig : '../.editorconfig',
+    src          : 'src',
+    dist         : 'dist',
+    bower        : {
       downloaded : 'bower_components',
       toUse      : '.local/bower'
     }
@@ -137,28 +138,30 @@ gulp.task('jshint', ['jshint:tools', 'jshint:project']);
 //------------------------------------------------------------------------------
 // @begin: lintspaces
 
+$.streams.lintspaces = $.lazypipe()
+  .pipe( $.cached, 'lintspaces' )
+  .pipe( $.lintspaces, { editorconfig: $.config.paths.editorconfig } )
+  .pipe( $.lintspaces.reporter );
+
+
 gulp.task('lintspaces:tools', function() {
-  return gulp.src('gulpfile.js')
-    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
-    .pipe( lintspaces.reporter() );
+  return gulp.src( $.config.tools )
+    .pipe( $.streams.lintspaces() );
 });
 
 gulp.task('lintspaces:project:js', function() {
-  return gulp.src('src/**/*.js')
-    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
-    .pipe( lintspaces.reporter() );
+  return gulp.src( $.config.project.js )
+    .pipe( $.streams.lintspaces() );
 });
 
 gulp.task('lintspaces:project:css', function() {
-  return gulp.src('src/**/*.css')
-    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
-    .pipe( lintspaces.reporter() );
+  return gulp.src( $.config.project.css )
+    .pipe( $.streams.lintspaces() );
 });
 
 gulp.task('lintspaces:project:html', function() {
-  return gulp.src('src/**/*.html')
-    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
-    .pipe( lintspaces.reporter() );
+  return gulp.src( $.config.project.html )
+    .pipe( $.streams.lintspaces() );
 });
 
 gulp.task('lintspaces:project', [
