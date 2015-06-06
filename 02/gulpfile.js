@@ -5,20 +5,20 @@ var gulp        = require('gulp'),
     // TODO: remove
     sequence    = require('gulp-sequence');
 
-    //---
-
-    $.pkg         = require('./package.json');
-    $.del         = require('del');
-    $.lazypipe    = require('lazypipe');
-    $.browserSync = require('browser-sync');
-    $.reload      = $.browserSync.reload;
-
-    // shared streams
-    $.streams     = {};
-
 //------------------------------------------------------------------------------
 // @begin: utils
 (function() {
+
+$.del         = require('del');
+$.lazypipe    = require('lazypipe');
+$.browserSync = require('browser-sync');
+$.reload      = $.browserSync.reload;
+
+// shared streams
+$.streams     = {};
+
+$.pkg         = require('./package.json');
+
 
 /**
   * Log a message or series of messages using chalk's blue color.
