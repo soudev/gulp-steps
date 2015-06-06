@@ -95,7 +95,11 @@ gulp.task('lintspaces:project:css', function() {
     .pipe( lintspaces.reporter() );
 });
 
-gulp.task('lintspaces:project:html', function() { console.log('TODO: define'); });
+gulp.task('lintspaces:project:html', function() {
+  return gulp.src('src/**/*.html')
+    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
+    .pipe( lintspaces.reporter() );
+});
 
 gulp.task('lintspaces:project', [
   'lintspaces:project:js',
