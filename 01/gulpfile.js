@@ -29,15 +29,18 @@ function projectInfoMsg() {
 //==============================================================================
 // @begin: gulp tasks ==========================================================
 //==============================================================================
-// clean
+// @begin: clean
+
 gulp.task('clean:dist', del.bind(null, [ 'dist' ]));
 
 gulp.task('clean:bower', del.bind(null, [ '.local/bower' ]));
 
 gulp.task('clean', ['clean:dist', 'clean:bower']);
 
+// @end: clean
 //------------------------------------------------------------------------------
-// bower
+// @begin: bower
+
 gulp.task('bower:jquery', function() {
   return gulp.src('bower_components/jquery/dist/*.{js,map}')
     .pipe(gulp.dest('.local/bower/vendor/jquery'))
@@ -50,14 +53,18 @@ gulp.task('bower:dist', ['bower:dev'], function() {
     .pipe(gulp.dest('dist'));
 });
 
+// @end: bower
 //------------------------------------------------------------------------------
-// jshint
+// @begin: jshint
+
 gulp.task('jshint:tools', function() { console.log('TODO: define'); });
 gulp.task('jshint:project', function() { console.log('TODO: define'); });
 gulp.task('jshint', ['jshint:tools', 'jshint:project']);
 
+// @end: jshint
 //------------------------------------------------------------------------------
-// lintspaces
+// @begin: lintspaces
+
 gulp.task('lintspaces:tools', function() { console.log('TODO: define'); });
 gulp.task('lintspaces:project:js', function() { console.log('TODO: define'); });
 gulp.task('lintspaces:project:css', function() { console.log('TODO: define'); });
@@ -65,12 +72,14 @@ gulp.task('lintspaces:project:html', function() { console.log('TODO: define'); }
 gulp.task('lintspaces:project', ['lintspaces:project:js', 'lintspaces:project:css', 'lintspaces:project:html']);
 gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
+// @end: lintspaces
 //------------------------------------------------------------------------------
 // validate
 gulp.task('validate', ['jshint', 'lintspaces']);
 
 //------------------------------------------------------------------------------
 // @begin: build
+
 gulp.task('build:index', function() {
 
   var jsFilter       = filter( '**/*.js' ),
@@ -105,7 +114,8 @@ gulp.task('build', sequence(['clean:dist', 'validate'], ['build:index', 'bower:d
 
 // @end: build
 //------------------------------------------------------------------------------
-// webserver
+// @begin: webserver
+
 gulp.task('webserver:dist', ['build'], function() {
 
   browserSync({
@@ -129,12 +139,15 @@ gulp.task('webserver:dev', ['validate', 'bower:dev'], function() {
 
 });
 
+// @end: webserver
 //------------------------------------------------------------------------------
-// watch
+// @begin: watch
+
 gulp.task('watch', ['webserver:dev'], function() { console.log('TODO: define'); });
 
+// @end: watch
 //------------------------------------------------------------------------------
-// main
+// @begin: main
 
 gulp.task('default', ['watch'], function() {
   projectInfoMsg();
@@ -148,6 +161,7 @@ gulp.task('preview', ['webserver:dist'], function() {
   projectInfoMsg();
 });
 
+// @end: main
 //==============================================================================
 // @end: gulp tasks ============================================================
 //==============================================================================
