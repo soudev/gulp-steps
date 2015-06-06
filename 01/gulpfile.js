@@ -89,7 +89,12 @@ gulp.task('lintspaces:project:js', function() {
     .pipe( lintspaces.reporter() );
 });
 
-gulp.task('lintspaces:project:css', function() { console.log('TODO: define'); });
+gulp.task('lintspaces:project:css', function() {
+  return gulp.src('src/**/*.css')
+    .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
+    .pipe( lintspaces.reporter() );
+});
+
 gulp.task('lintspaces:project:html', function() { console.log('TODO: define'); });
 
 gulp.task('lintspaces:project', [
