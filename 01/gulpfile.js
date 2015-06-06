@@ -180,7 +180,47 @@ gulp.task('webserver:dev', ['validate', 'bower:dev'], function() {
 //------------------------------------------------------------------------------
 // @begin: watch
 
-gulp.task('watch', ['webserver:dev'], function() { console.log('TODO: define'); });
+gulp.task('watch', ['webserver:dev'], function() {
+
+  gulp.watch(['src/**/*.html'], ['wf:project:html']);
+
+  gulp.watch(['src/**/*.js'], ['wf:project:js']);
+
+  gulp.watch(['src/**/*.css'], ['wf:project:css']);
+
+});
+
+gulp.task('wf:bs:reload', function() {
+  reload();
+});
+
+
+gulp.task('wf:project:html', function( done ) {
+  sequence(
+    'lintspaces:project:html',
+    'wf:bs:reload',
+    done
+  );
+});
+
+gulp.task('wf:project:js', function( done ) {
+  sequence(
+    [
+      'jshint:project',
+      'lintspaces:project:js'
+    ],
+    'wf:bs:reload',
+    done
+  );
+});
+
+gulp.task('wf:project:css', function( done ) {
+  sequence(
+    'lintspaces:project:css',
+    'wf:bs:reload',
+    done
+  );
+});
 
 // @end: watch
 //------------------------------------------------------------------------------
