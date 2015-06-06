@@ -60,15 +60,19 @@ $.projectInfoMsg = function() {
 
   $.config = {
 
-    paths   : paths,
+    paths     : paths,
 
-    tools   : 'gulpfile.js',
+    tools     : 'gulpfile.js',
 
-    project : {
+    project   : {
       index   : paths.src + '/index.html',
       html    : [ paths.src + '/**/*.html' ],
       css     : [ paths.src + '/**/*.css' ],
       js      : [ paths.src + '/**/*.js' ]
+    },
+
+    webserver : {
+      port: 1337
     }
 
   };
@@ -211,7 +215,7 @@ gulp.task('webserver:dist', ['build'], function() {
 
   $.browserSync({
     ui: false,
-    port: 1337,
+    port: $.config.webserver.port,
     server:{
       baseDir: $.config.paths.dist
     }
@@ -222,7 +226,7 @@ gulp.task('webserver:dist', ['build'], function() {
 gulp.task('webserver:dev', ['validate', 'bower:dev'], function() {
 
   $.browserSync({
-    port: 1337,
+    port: $.config.webserver.port,
     server:{
       baseDir: [
         $.config.paths.src,
