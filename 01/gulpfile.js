@@ -111,10 +111,6 @@ gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
 // @end: lintspaces
 //------------------------------------------------------------------------------
-// validate
-gulp.task('validate', ['jshint', 'lintspaces']);
-
-//------------------------------------------------------------------------------
 // @begin: build
 
 gulp.task('build:index', function() {
@@ -225,6 +221,10 @@ gulp.task('wf:project:css', function( done ) {
 // @end: watch
 //------------------------------------------------------------------------------
 // @begin: main
+
+gulp.task('validate', ['jshint', 'lintspaces'], function() {
+  projectInfoMsg();
+});
 
 gulp.task('default', ['watch'], function() {
   projectInfoMsg();
