@@ -102,15 +102,15 @@ gulp.task('clean', ['clean:dist', 'clean:bower']);
 // @begin: bower
 
 gulp.task('bower:jquery', function() {
-  return gulp.src('bower_components/jquery/dist/*.{js,map}')
-    .pipe(gulp.dest('.local/bower/vendor/jquery'));
+  return gulp.src( $.config.paths.bower.downloaded + '/jquery/dist/*.{js,map}' )
+    .pipe(gulp.dest( $.config.paths.bower.toUse + '/vendor/jquery' ));
 });
 
-gulp.task('bower:dev', sequence('clean:bower', 'bower:jquery'));
+gulp.task('bower:dev', $.sequence( 'clean:bower', 'bower:jquery' ));
 
 gulp.task('bower:dist', ['bower:dev'], function() {
-  return gulp.src('.local/bower/**/*')
-    .pipe(gulp.dest('dist'));
+  return gulp.src( $.config.paths.bower.toUse + '/**/*' )
+    .pipe(gulp.dest( $.config.paths.dist ));
 });
 
 // @end: bower
