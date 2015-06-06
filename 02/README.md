@@ -66,6 +66,7 @@ npm install \
   lazypipe \
   gulp-load-plugins \
   gulp \
+  gulp-util \
   gulp-sequence \
   gulp-cached \
   gulp-jshint \
@@ -106,6 +107,8 @@ bower install \
 * [[GitHub] jackfranklin / gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) - Automatically load in gulp plugins
 
 * [[GitHub] gulpjs / gulp](https://github.com/gulpjs/gulp) - The streaming build system
+
+  * [[GitHub] gulpjs / gulp-util](https://github.com/gulpjs/gulp-util) - Utilities for gulp plugins
 
   * [[GitHub] wearefractal / gulp-cached](https://github.com/wearefractal/gulp-cached) - A simple in-memory file cache for gulp
 
