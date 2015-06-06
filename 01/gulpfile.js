@@ -97,11 +97,15 @@ gulp.task('watch', ['webserver:dev'], function() { console.log('TODO: define'); 
 // main
 
 gulp.task('default', ['watch'], function() {
-  projectInfoMsg()
+  projectInfoMsg();
+});
+
+gulp.task('release', ['build'], function() {
+  projectInfoMsg();
 });
 
 gulp.task('preview', ['webserver:dist'], function() {
-  projectInfoMsg()
+  projectInfoMsg();
 });
 
 //==============================================================================
