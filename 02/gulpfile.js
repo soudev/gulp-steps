@@ -216,7 +216,7 @@ gulp.task('webserver:dist', ['build'], function() {
     ui: false,
     port: 1337,
     server:{
-      baseDir: 'dist'
+      baseDir: $.config.paths.dist
     }
   });
 
@@ -227,7 +227,10 @@ gulp.task('webserver:dev', ['validate', 'bower:dev'], function() {
   $.browserSync({
     port: 1337,
     server:{
-      baseDir: ['src', '.local/bower']
+      baseDir: [
+        $.config.paths.src,
+        $.config.paths.bower.toUse
+      ]
     }
   });
 
