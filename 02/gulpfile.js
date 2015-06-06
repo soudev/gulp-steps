@@ -12,15 +12,15 @@ var gulp        = require('gulp'),
     filter      = require('gulp-filter'),
     uglify      = require('gulp-uglify'),
     csso        = require('gulp-csso'),
-    minifyHtml  = require('gulp-minify-html'),
+    minifyHtml  = require('gulp-minify-html');
 
-    // TODO: added to $
-    browserSync = require('browser-sync'),
-    reload      = browserSync.reload;
+    //---
 
     $.pkg         = require('./package.json');
     $.del         = require('del');
-    $.lazypipe    = require('lazypipe')
+    $.lazypipe    = require('lazypipe');
+    $.browserSync = require('browser-sync');
+    $.reload      = $.browserSync.reload;
 
     // shared streams
     $.streams     = {};
@@ -190,7 +190,7 @@ gulp.task('build', sequence(['clean:dist', 'validate'], ['build:index', 'bower:d
 
 gulp.task('webserver:dist', ['build'], function() {
 
-  browserSync({
+  $.browserSync({
     ui: false,
     port: 1337,
     server:{
@@ -202,7 +202,7 @@ gulp.task('webserver:dist', ['build'], function() {
 
 gulp.task('webserver:dev', ['validate', 'bower:dev'], function() {
 
-  browserSync({
+  $.browserSync({
     port: 1337,
     server:{
       baseDir: ['src', '.local/bower']
@@ -226,7 +226,7 @@ gulp.task('watch', ['webserver:dev'], function() {
 });
 
 gulp.task('wf:bs:reload', function() {
-  reload();
+  $.reload();
 });
 
 
