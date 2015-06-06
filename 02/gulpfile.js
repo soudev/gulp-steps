@@ -57,10 +57,35 @@ $.projectInfoMsg = function() {
 })();
 // @end: utils
 //------------------------------------------------------------------------------
-// configs
+// @begin: configs
+(function() {
 
-// TODO: define
+  var paths = {
+    src        : 'src',
+    dist       : 'dist',
+    bower      : {
+      downloaded : 'bower_components',
+      toUse      : '.local/bower'
+    }
+  };
 
+  $.config = {
+
+    paths   : paths,
+
+    tools   : 'gulpfile.js',
+
+    project : {
+      index   : paths.src + '/index.html',
+      html    : [ paths.src + '/**/*.html' ],
+      css     : [ paths.src + '/**/*.css' ],
+      js      : [ paths.src + '/**/*.js' ]
+    }
+
+  };
+
+})();
+// @end: configs
 //==============================================================================
 // @begin: gulp tasks ==========================================================
 //==============================================================================
