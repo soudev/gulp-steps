@@ -1,0 +1,13 @@
+{
+  "name": "gulp-steps-02",
+  "private": true,
+  "version": "0.1.0",
+  "description": "intermediary gulp example",
+  "keywords": [
+    "gulp",
+    "basic",
+    "example"
+  ],
+  "author": "Erko Bridee",
+  "license": "MIT"
+}
