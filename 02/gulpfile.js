@@ -1,5 +1,8 @@
 
 var gulp        = require('gulp'),
+    $           = require('gulp-load-plugins'),
+
+    // TODO: remove
     sequence    = require('gulp-sequence'),
     jshint      = require('gulp-jshint'), // jshint-stylish
     lintspaces  = require('gulp-lintspaces'),
@@ -11,6 +14,8 @@ var gulp        = require('gulp'),
     csso        = require('gulp-csso'),
     minifyHtml  = require('gulp-minify-html'),
 
+    // TODO: added to $
+    lazypipe    = require('lazypipe'),
     del         = require('del'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload,
@@ -19,12 +24,19 @@ var gulp        = require('gulp'),
 //------------------------------------------------------------------------------
 // utils
 
+// TODO: use gulp-util
+
 function projectInfoMsg() {
   console.log('');
   console.log('project: ' + pkg.name + ' v' + pkg.version);
   console.log('description: ' + pkg.description);
   console.log('');
 }
+
+//------------------------------------------------------------------------------
+// configs
+
+// TODO: define
 
 //==============================================================================
 // @begin: gulp tasks ==========================================================
