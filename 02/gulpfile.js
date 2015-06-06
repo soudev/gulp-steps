@@ -296,7 +296,9 @@ gulp.task('wf:project:css', function( done ) {
 //------------------------------------------------------------------------------
 // @begin: main
 
-gulp.task('validate', ['jshint', 'lintspaces']);
+gulp.task('validate', ['jshint', 'lintspaces'], function() {
+  $.projectInfoMsg();
+});
 
 gulp.task('default', ['watch'], function() {
   $.projectInfoMsg();
