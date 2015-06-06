@@ -91,9 +91,9 @@ $.projectInfoMsg = function() {
 //==============================================================================
 // @begin: clean
 
-gulp.task('clean:dist', $.del.bind(null, [ 'dist' ]));
+gulp.task('clean:dist', $.del.bind(null, [ $.config.paths.dist ]));
 
-gulp.task('clean:bower', $.del.bind(null, [ '.local/bower' ]));
+gulp.task('clean:bower', $.del.bind(null, [ $.config.paths.bower.toUse ]));
 
 gulp.task('clean', ['clean:dist', 'clean:bower']);
 
