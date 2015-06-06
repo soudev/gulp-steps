@@ -1,9 +1,6 @@
 
 var gulp        = require('gulp'),
-    $           = require('gulp-load-plugins')(),
-
-    // TODO: remove
-    sequence    = require('gulp-sequence');
+    $           = require('gulp-load-plugins')();
 
 //------------------------------------------------------------------------------
 // @begin: utils
@@ -95,14 +92,14 @@ gulp.task('clean', ['clean:dist', 'clean:bower']);
 
 gulp.task('bower:jquery', function() {
   return gulp.src( $.config.paths.bower.downloaded + '/jquery/dist/*.{js,map}' )
-    .pipe(gulp.dest( $.config.paths.bower.toUse + '/vendor/jquery' ));
+    .pipe( gulp.dest( $.config.paths.bower.toUse + '/vendor/jquery' ) );
 });
 
 gulp.task('bower:dev', $.sequence( 'clean:bower', 'bower:jquery' ));
 
 gulp.task('bower:dist', ['bower:dev'], function() {
   return gulp.src( $.config.paths.bower.toUse + '/**/*' )
-    .pipe(gulp.dest( $.config.paths.dist ));
+    .pipe( gulp.dest( $.config.paths.dist ) );
 });
 
 // @end: bower
