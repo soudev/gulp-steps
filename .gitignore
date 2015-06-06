@@ -12,6 +12,11 @@ logs
 results
 
 #-----------
+# bower
+
+bower_components
+
+#-----------
 # node.js
 
 node
