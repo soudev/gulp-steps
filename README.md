@@ -4,7 +4,7 @@
 
 * [01](01) - basic
 
-* **To be defined** : [02](02) - intermediary
+* [02](02) - intermediary
 
 * **To be defined** : [03](03) - advanced
 
