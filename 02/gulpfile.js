@@ -1,9 +1,11 @@
 
-var gulp        = require('gulp'),
-    $           = require('gulp-load-plugins')();
+var gulp        = require('gulp');
 
 //------------------------------------------------------------------------------
-// @begin: utils
+// @begin: utils ($)
+
+var $         = require('gulp-load-plugins')();
+
 (function() {
 
 $.del         = require('del');
@@ -11,11 +13,16 @@ $.lazypipe    = require('lazypipe');
 $.browserSync = require('browser-sync');
 $.reload      = $.browserSync.reload;
 
-// shared streams
-$.streams     = {};
+//---
 
 $.pkg         = require('./package.json');
 
+//---
+
+// shared streams
+$.streams     = {};
+
+//---
 
 /**
   * Log a message or series of messages using chalk's blue color.
@@ -43,7 +50,7 @@ $.projectInfoMsg = function() {
 };
 
 })();
-// @end: utils
+// @end: utils ($)
 //------------------------------------------------------------------------------
 // @begin: configs
 (function() {
