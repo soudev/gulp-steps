@@ -64,7 +64,12 @@ gulp.task('jshint:tools', function() {
     .pipe( jshint.reporter('fail') );
 });
 
-gulp.task('jshint:project', function() { console.log('TODO: define'); });
+gulp.task('jshint:project', function() {
+    return gulp.src('src/**/*.js')
+    .pipe( jshint() )
+    .pipe( jshint.reporter('jshint-stylish') )
+    .pipe( jshint.reporter('fail') );
+});
 
 gulp.task('jshint', ['jshint:tools', 'jshint:project']);
 
