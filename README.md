@@ -2,7 +2,7 @@
 
 > basic steps to use [gulp.js](http://gulpjs.com/)
 
-* **To be defined** : [01](01) - basic
+* [01](01) - basic
 
 * **To be defined** : [02](02) - intermediary
 
