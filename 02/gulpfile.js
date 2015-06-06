@@ -15,12 +15,12 @@ var gulp        = require('gulp'),
     minifyHtml  = require('gulp-minify-html'),
 
     // TODO: added to $
-    lazypipe    = require('lazypipe'),
-    del         = require('del'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
     $.pkg         = require('./package.json');
+    $.del         = require('del');
+    $.lazypipe    = require('lazypipe')
 
     // shared streams
     $.streams     = {};
@@ -66,9 +66,9 @@ $.projectInfoMsg = function() {
 //==============================================================================
 // @begin: clean
 
-gulp.task('clean:dist', del.bind(null, [ 'dist' ]));
+gulp.task('clean:dist', $.del.bind(null, [ 'dist' ]));
 
-gulp.task('clean:bower', del.bind(null, [ '.local/bower' ]));
+gulp.task('clean:bower', $.del.bind(null, [ '.local/bower' ]));
 
 gulp.task('clean', ['clean:dist', 'clean:bower']);
 
