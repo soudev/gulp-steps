@@ -55,7 +55,11 @@ $.projectInfoMsg = function() {
 // @begin: configs
 (function() {
 
-  var paths = {
+  var config = {};
+
+  //---
+
+  config.paths = {
     editorconfig : '../.editorconfig',
     src          : 'src',
     dist         : 'dist',
@@ -65,24 +69,22 @@ $.projectInfoMsg = function() {
     }
   };
 
-  $.config = {
+  config.tools = 'gulpfile.js';
 
-    paths     : paths,
-
-    tools     : 'gulpfile.js',
-
-    project   : {
-      index   : paths.src + '/index.html',
-      html    : [ paths.src + '/**/*.html' ],
-      css     : [ paths.src + '/**/*.css' ],
-      js      : [ paths.src + '/**/*.js' ]
-    },
-
-    webserver : {
-      port: 1337
-    }
-
+  config.project = {
+    index   : config.paths.src + '/index.html',
+    html    : [ config.paths.src + '/**/*.html' ],
+    styles  : [ config.paths.src + '/**/*.css' ],
+    js      : [ config.paths.src + '/**/*.js' ]
   };
+
+  config.webserver = {
+    port: 1337
+  };
+
+  //---
+
+  $.config = config;
 
 })();
 // @end: configs
@@ -156,8 +158,8 @@ gulp.task('lintspaces:project:js', function() {
     .pipe( $.streams.lintspaces() );
 });
 
-gulp.task('lintspaces:project:css', function() {
-  return gulp.src( $.config.project.css )
+gulp.task('lintspaces:project:styles', function() {
+  return gulp.src( $.config.project.styles )
     .pipe( $.streams.lintspaces() );
 });
 
@@ -168,7 +170,7 @@ gulp.task('lintspaces:project:html', function() {
 
 gulp.task('lintspaces:project', [
   'lintspaces:project:js',
-  'lintspaces:project:css',
+  'lintspaces:project:styles',
   'lintspaces:project:html'
 ]);
 
@@ -176,12 +178,16 @@ gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
 // @end: lintspaces
 //------------------------------------------------------------------------------
+
+gulp.task('validate', ['jshint', 'lintspaces']);
+
+//------------------------------------------------------------------------------
 // @begin: build
 
 gulp.task('build:index', function() {
 
   var jsFilter       = $.filter( '**/*.js' ),
-      cssFilter      = $.filter( '**/*.css' ),
+      stylesFilter   = $.filter( '**/*.css' ),
       htmlFilter     = $.filter( '**/*.html' ),
       userefAssets   = $.useref.assets(),
       minifyHtmlOpts = {
@@ -194,9 +200,9 @@ gulp.task('build:index', function() {
     .pipe( jsFilter )
     .pipe( $.uglify() ) // Minify any javascript sources
     .pipe( jsFilter.restore() )
-    .pipe( cssFilter )
+    .pipe( stylesFilter )
     .pipe( $.csso() ) // Minify any CSS sources
-    .pipe( cssFilter.restore() )
+    .pipe( stylesFilter.restore() )
     .pipe( $.rev() ) // Rename the concatenated files
     .pipe( userefAssets.restore() )
     .pipe( $.useref() )
@@ -250,7 +256,7 @@ gulp.task('watch', ['webserver:dev'], function() {
 
   gulp.watch( $.config.project.js, ['wf:project:js']);
 
-  gulp.watch( $.config.project.css, ['wf:project:css']);
+  gulp.watch( $.config.project.styles, ['wf:project:styles']);
 
 });
 
@@ -259,8 +265,8 @@ gulp.task('wf:bs:reload', function() {
 });
 
 gulp.task('wf:bs:reload:stream', function() {
-  return gulp.src( $.config.project.css )
-    .pipe( $.cached( 'css' ) )
+  return gulp.src( $.config.project.styles )
+    .pipe( $.cached( 'styles' ) )
     .pipe( $.reload({ stream: true }) );
 });
 
@@ -284,9 +290,9 @@ gulp.task('wf:project:js', function( done ) {
   );
 });
 
-gulp.task('wf:project:css', function( done ) {
+gulp.task('wf:project:styles', function( done ) {
   $.sequence(
-    'lintspaces:project:css',
+    'lintspaces:project:styles',
     'wf:bs:reload:stream',
     done
   );
@@ -294,11 +300,7 @@ gulp.task('wf:project:css', function( done ) {
 
 // @end: watch
 //------------------------------------------------------------------------------
-// @begin: main
-
-gulp.task('validate', ['jshint', 'lintspaces'], function() {
-  $.projectInfoMsg();
-});
+// @begin: main / default
 
 gulp.task('default', ['watch'], function() {
   $.projectInfoMsg();
@@ -312,7 +314,7 @@ gulp.task('preview', ['webserver:dist'], function() {
   $.projectInfoMsg();
 });
 
-// @end: main
+// @end: main / default
 //==============================================================================
 // @end: gulp tasks ============================================================
 //==============================================================================
