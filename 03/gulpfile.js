@@ -17,6 +17,8 @@ $.reload      = $.browserSync.reload;
 
 $.pkg         = require('./package.json');
 
+$.config      = require('./gulp/config');
+
 //---
 
 // shared streams
