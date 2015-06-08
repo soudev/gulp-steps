@@ -2,6 +2,18 @@
 var $ = module.exports = require('gulp-load-plugins')();
 
 //---
+
+$.path            = require('path');
+
+$.rootPath = $.path.resolve( './' );
+
+// [Gist] Better local require() paths for Node.js
+// https://gist.github.com/branneman/8048520
+$.rootRequire = function( name ) {
+  return require( $.path.join( $.rootPath, name ) );
+};
+
+//---
 // Expose some other modules
 
 $.del         = require('del');
@@ -11,9 +23,9 @@ $.reload      = $.browserSync.reload;
 
   //--- local modules
 
-$.pkg         = require('../../package.json');
+$.pkg         = $.rootRequire('package.json');
 
-$.config      = require('../config');
+$.config      = $.rootRequire('tools/config');
 
 //---
 
