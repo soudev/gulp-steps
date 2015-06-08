@@ -89,7 +89,7 @@ gulp.task('lintspaces:project:js', function() {
     .pipe( lintspaces.reporter() );
 });
 
-gulp.task('lintspaces:project:css', function() {
+gulp.task('lintspaces:project:styles', function() {
   return gulp.src('src/**/*.css')
     .pipe( lintspaces({ editorconfig: '../.editorconfig' }) )
     .pipe( lintspaces.reporter() );
@@ -103,7 +103,7 @@ gulp.task('lintspaces:project:html', function() {
 
 gulp.task('lintspaces:project', [
   'lintspaces:project:js',
-  'lintspaces:project:css',
+  'lintspaces:project:styles',
   'lintspaces:project:html'
 ]);
 
@@ -111,12 +111,16 @@ gulp.task('lintspaces', ['lintspaces:tools', 'lintspaces:project']);
 
 // @end: lintspaces
 //------------------------------------------------------------------------------
+
+gulp.task('validate', ['jshint', 'lintspaces']);
+
+//------------------------------------------------------------------------------
 // @begin: build
 
 gulp.task('build:index', function() {
 
   var jsFilter       = filter( '**/*.js' ),
-      cssFilter      = filter( '**/*.css' ),
+      stylesFilter   = filter( '**/*.css' ),
       htmlFilter     = filter( '**/*.html' ),
       userefAssets   = useref.assets(),
       minifyHtmlOpts = {
@@ -129,9 +133,9 @@ gulp.task('build:index', function() {
     .pipe( jsFilter )
     .pipe( uglify() ) // Minify any javascript sources
     .pipe( jsFilter.restore() )
-    .pipe( cssFilter )
+    .pipe( stylesFilter )
     .pipe( csso() ) // Minify any CSS sources
-    .pipe( cssFilter.restore() )
+    .pipe( stylesFilter.restore() )
     .pipe( rev() ) // Rename the concatenated files
     .pipe( userefAssets.restore() )
     .pipe( useref() )
@@ -182,7 +186,7 @@ gulp.task('watch', ['webserver:dev'], function() {
 
   gulp.watch(['src/**/*.js'], ['wf:project:js']);
 
-  gulp.watch(['src/**/*.css'], ['wf:project:css']);
+  gulp.watch(['src/**/*.css'], ['wf:project:styles']);
 
 });
 
@@ -210,9 +214,9 @@ gulp.task('wf:project:js', function( done ) {
   );
 });
 
-gulp.task('wf:project:css', function( done ) {
+gulp.task('wf:project:styles', function( done ) {
   sequence(
-    'lintspaces:project:css',
+    'lintspaces:project:styles',
     'wf:bs:reload',
     done
   );
@@ -221,10 +225,6 @@ gulp.task('wf:project:css', function( done ) {
 // @end: watch
 //------------------------------------------------------------------------------
 // @begin: main
-
-gulp.task('validate', ['jshint', 'lintspaces'], function() {
-  projectInfoMsg();
-});
 
 gulp.task('default', ['watch'], function() {
   projectInfoMsg();
