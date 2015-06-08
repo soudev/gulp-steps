@@ -34,6 +34,7 @@
     "gulp-useref": "^1.2.0",
     "gulp-util": "^3.0.5",
     "jshint-stylish": "^2.0.0",
-    "lazypipe": "^0.2.3"
+    "lazypipe": "^0.2.3",
+    "require-dir": "^0.3.0"
   }
 }
