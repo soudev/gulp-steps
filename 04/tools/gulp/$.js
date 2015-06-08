@@ -11,9 +11,9 @@ $.reload      = $.browserSync.reload;
 
   //--- local modules
 
-$.pkg         = require('../package.json');
+$.pkg         = require('../../package.json');
 
-$.config      = require('../tools/config');
+$.config      = require('../config');
 
 //---
 
