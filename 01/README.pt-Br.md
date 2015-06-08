@@ -1,7 +1,7 @@
 # gulp-steps : 01 - básico ([en](README.md))
 
 > Uso básico do Gulp
-> - todas as tarefas estão definidas diretamente no [gulpfile.js](gulpfile.js)
+> - todas as tarefas estão definidas diretamente no [gulpfile.js](gulpfile.js#L30)
 > - plugins do gulp e ultilidades definidas no início do [gulpfile.js](gulpfile.js#L2-L27)
 > - as configurações estão espalhadas nas tarefas
 
