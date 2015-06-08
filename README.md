@@ -6,7 +6,7 @@
 
 * [02](02) - intermediary
 
-* **To be defined** : [03](03) - advanced
+* [03](03) - advanced
 
 * **To be defined** : [04](04) - enhanced
 
