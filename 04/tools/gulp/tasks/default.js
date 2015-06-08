@@ -1,6 +1,6 @@
 
 var gulp        = require('gulp'),
-    $           = require('../$');
+    $           = require('../helpers/$');
 
 //---
 
