@@ -1,6 +1,10 @@
 
-var gulp      = require('gulp'),
-    $         = require('./gulp/$');
+var gulp        = require('gulp'),
+    $           = require('./gulp/$'),
+    requireDir  = require( 'require-dir' );
+
+// Require all gulp tasks
+requireDir( './gulp/tasks');
 
 //==============================================================================
 // @begin: gulp tasks ==========================================================
