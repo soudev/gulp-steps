@@ -2,6 +2,7 @@
 
 > Basic usage of Gulp
 > - all tasks defined directly on [gulpfile.js](gulpfile.js)
+> - gulp plugins and utilities defined at the beginning of [gulpfile.js](gulpfile.js#L2-L27)
 > - the settings are scattered among tasks
 
 
