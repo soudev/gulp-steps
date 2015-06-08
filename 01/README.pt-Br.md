@@ -2,7 +2,7 @@
 
 > Uso básico do Gulp
 > - todas as tarefas estão definidas diretamente no gulpfile.js
-> - as configurações, diretórios e arquivos estão espalhadas nas tarefas
+> - as configurações estão espalhadas nas tarefas
 
 
 ## Pré-requisitos
