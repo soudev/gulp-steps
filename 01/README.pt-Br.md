@@ -49,7 +49,7 @@ gulp
 gulp release
 ```
 
-* visualizar a versão construída
+* visualiza a versão construída
 
 ```bash
 gulp preview
