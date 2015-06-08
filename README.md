@@ -8,7 +8,7 @@
 
 * [03](03) - advanced
 
-* **To be defined** : [04](04) - enhanced
+* [04](04) - enhanced
 
 
 ## License
