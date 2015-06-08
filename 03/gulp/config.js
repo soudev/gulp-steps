@@ -4,6 +4,7 @@ module.exports = (function() {
 
   //---
 
+  // all paths is based on gulpfile.js location
   config.paths = {
     editorconfig : '../.editorconfig',
     src          : 'src',
