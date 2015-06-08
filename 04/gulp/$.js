@@ -13,7 +13,7 @@ $.reload      = $.browserSync.reload;
 
 $.pkg         = require('../package.json');
 
-$.config      = require('./config');
+$.config      = require('../tools/config');
 
 //---
 
