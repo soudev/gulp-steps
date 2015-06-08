@@ -9,16 +9,6 @@ requireDir( './gulp/tasks');
 //==============================================================================
 // @begin: gulp tasks ==========================================================
 //==============================================================================
-// @begin: clean
-
-gulp.task('clean:dist', $.del.bind(null, [ $.config.paths.dist ]));
-
-gulp.task('clean:bower', $.del.bind(null, [ $.config.paths.bower.toUse ]));
-
-gulp.task('clean', ['clean:dist', 'clean:bower']);
-
-// @end: clean
-//------------------------------------------------------------------------------
 // @begin: bower
 
 gulp.task('bower:jquery', function() {
