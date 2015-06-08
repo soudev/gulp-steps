@@ -5,6 +5,7 @@ var $ = module.exports = require('gulp-load-plugins')();
 
 $.path            = require('path');
 
+// path is relative to gulpfile.js location
 $.rootPath = $.path.resolve( './' );
 
 // [Gist] Better local require() paths for Node.js
