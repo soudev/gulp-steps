@@ -1,58 +1,6 @@
 
 var gulp      = require('gulp');
 
-//------------------------------------------------------------------------------
-// @begin: utils ($)
-
-var $         = require('gulp-load-plugins')();
-
-(function() {
-
-$.del         = require('del');
-$.lazypipe    = require('lazypipe');
-$.browserSync = require('browser-sync');
-$.reload      = $.browserSync.reload;
-
-//---
-
-$.pkg         = require('./package.json');
-
-$.config      = require('./gulp/config');
-
-//---
-
-// shared streams
-$.streams     = {};
-
-//---
-
-/**
-  * Log a message or series of messages using chalk's blue color.
-  * Can pass in a string, object or array.
-  */
-$.log = function(msg) {
-  if (typeof(msg) === 'object') {
-    for (var item in msg) {
-      if (msg.hasOwnProperty(item)) {
-        $.util.log($.util.colors.blue(msg[item]));
-      }
-    }
-  } else {
-    $.util.log($.util.colors.blue(msg));
-  }
-};
-
-//---
-
-$.projectInfoMsg = function() {
-  $.log('');
-  $.log('project: ' + $.pkg.name + ' v' + $.pkg.version);
-  $.log('description: ' + $.pkg.description);
-  $.log('');
-};
-
-})();
-// @end: utils ($)
 //==============================================================================
 // @begin: gulp tasks ==========================================================
 //==============================================================================
