@@ -1,5 +1,7 @@
 # gulp-steps : 01 - basic
 
+> Basic gulp usage of gulp, all tasks defined directly on gulpfile.js
+
 
 ## Prerequisites
 
