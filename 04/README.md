@@ -60,6 +60,7 @@ gulp preview
 npm init
 
 npm install \
+  require-dir \
   del \
   jshint-stylish \
   browser-sync \
@@ -97,6 +98,10 @@ bower install \
 * [jQuery](https://jquery.com/)
 
 --
+
+* [[GitHub] aseemk / requireDir](https://github.com/aseemk/requireDir) - Node.js helper to require() directories.
+
+  * [Spreading Gulp tasks into multiple files | Medium by @_rywar](https://medium.com/@_rywar/spreading-gulp-tasks-into-multiple-files-2f63d8c959d5)
 
 * [[GitHub] sindresorhus / del](https://github.com/sindresorhus/del) - Delete files/folders using globs
 
