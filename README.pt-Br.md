@@ -1,6 +1,6 @@
 # gulp-steps ([en](README.md))
 
-> passos básicos para uso do [gulp.js](http://gulpjs.com/)
+> passos básicos para usar o [gulp.js](http://gulpjs.com/)
 
 * [01](01) - básico
 
