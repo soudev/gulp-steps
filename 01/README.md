@@ -1,6 +1,8 @@
-# gulp-steps : 01 - basic
+# gulp-steps : 01 - basic ([pt-Br](README.pt-Br.md))
 
-> Basic gulp usage of gulp, all tasks defined directly on gulpfile.js
+> Basic usage of Gulp
+> - all tasks defined directly on gulpfile.js
+> - the settings are scattered among tasks
 
 
 ## Prerequisites
@@ -41,7 +43,7 @@ npm start
 gulp
 ```
 
-* build
+* build (production version)
 
 ```bash
 gulp release
