@@ -1,4 +1,4 @@
-# gulp-steps
+# gulp-steps ([pt-Br](README.pt-Br.md))
 
 > basic steps to use [gulp.js](http://gulpjs.com/)
 
