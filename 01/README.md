@@ -1,7 +1,7 @@
 # gulp-steps : 01 - basic ([pt-Br](README.pt-Br.md))
 
 > Basic usage of Gulp
-> - all tasks defined directly on gulpfile.js
+> - all tasks defined directly on [gulpfile.js](gulpfile.js)
 > - the settings are scattered among tasks
 
 
