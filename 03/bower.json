@@ -1,0 +1,27 @@
+{
+  "name": "gulp-steps-03",
+  "private": true,
+  "version": "0.1.0",
+  "homepage": "https://github.com/soudev/gulp-steps",
+  "authors": [
+    "Erko Bridee <erko.bridee@gmail.com>"
+  ],
+  "description": "advanced gulp example",
+  "keywords": [
+    "gulp",
+    "advanced",
+    "example"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    ".local",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
