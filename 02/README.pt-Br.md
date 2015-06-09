@@ -5,7 +5,9 @@
 > - bloco de código de utilidades definido nas [linhas 5-53 do gulpfile.js](gulpfile.js#L5-L53)
 >   - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 7 do gulpfile.js](gulpfile.js#L7)
 > - configurações centralizadas em um bloco de código nas [linhas 55-90 do gulpfile.js](gulpfile.js#L55-L90)
-
+> - utilizado o [lazypipe](https://github.com/OverZealous/lazypipe) para compartilhar e reutilizar processamentos
+>   - jshint na [linha 122 do gulpfile.js](gulpfile.js#L122)
+>   - lintspaces na [linha 145 do gulpfile.js](gulpfile.js#L145)
 
 ## Pré-requisitos
 
