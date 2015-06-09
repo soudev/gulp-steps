@@ -10,7 +10,7 @@
 > - gulpfile.js
 >   - arquivos com as tarefas do gulp carregados com o [requireDir](https://github.com/aseemk/requireDir) na [linha 7 do gulpfile.js](gulpfile.js#L7)
 >   - ultidades `./gulp/$.js` para o gulp carregadas na [linha 3 do gulpfile.js](gulpfile.js#L3)
->   - definições das tarefas principais e da tarefa default(padrão) do gulp nas [linnhas 12-26 do gulpfile.js](gulpfile.js#L12-L26)
+>   - definições das tarefas principais e da tarefa default(padrão) do gulp nas [linhas 12-26 do gulpfile.js](gulpfile.js#L12-L26)
 > - utilizado o [lazypipe](https://github.com/OverZealous/lazypipe) para compartilhar e reutilizar processamentos
 >   - jshint na [linha 7 do ./gulp/tasks/jshint.js](gulp/tasks/jshint.js#L7)
 >   - lintspaces na [linha 7 do ./gulp/tasks/lintspaces.js](gulp/tasks/lintspaces.js#L7)
