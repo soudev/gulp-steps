@@ -6,11 +6,15 @@
 >   - configurações definidas no arquivo [./gulp/config.js](gulp/config.js)
 >   - utilidades definidas no arquivo [./gulp/$.js](gulp/$.js)
 >     - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 2 do arquivo ./gulp/$.js](gulp/%24.js#L2)
->     - configurações do gulp carregado na [linha 16 do arquivo ./gulp/$.js](gulp/%24.js#L16)
+>     - configurações do gulp carregado na [linha 16 do ./gulp/$.js](gulp/%24.js#L16)
 > - gulpfile.js
 >   - arquivos das tarefas do gulp carregados com [requireDir](https://github.com/aseemk/requireDir) na [linha 7 do gulpfile.js](gulpfile.js#L7)
 >   - ultidades `./gulp/$.js` para o gulp carregado na [linha 3 do gulpfile.js](gulpfile.js#L3)
 >   - definição da tarefas principais e default(padrão) do gulp nas [linnhas 12-26 do gulpfile.js](gulpfile.js#L12-L26)
+> - utilizado o [lazypipe](https://github.com/OverZealous/lazypipe) para compartilhar e reutilizar processamentos
+>   - jshint na [linha 7 do ./gulp/tasks/jshint.js](gulp/tasks/jshint.js#L7)
+>   - lintspaces na [linha 7 do ./gulp/tasks/lintspaces.js](gulp/tasks/lintspaces.js#L7)
+>   - `$.streams.` definido na [linha 21 do ./gulp/$.js](gulp/%24.js#L21)
 
 
 ## Pré-requisitos
