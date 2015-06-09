@@ -3,6 +3,7 @@
 > Advanced usage of Gulp
 > - Spreading Gulp
 >   - tasks into multiple files inside [./gulp/tasks](gulp/tasks)
+>     - each gulp tasks file needs to require `gulp` and `$.js` (ex.: [./gulp/tasks/clean.js](gulp/tasks/clean.js#L2-L3))
 >   - settings defined on file [./gulp/config.js](gulp/config.js)
 >   - utilities defined on file [./gulp/$.js](gulp/$.js)
 >     - gulp plugin loaded with [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) at [./gulp/$.js line 2](gulp/%24.js#L2)

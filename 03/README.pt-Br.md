@@ -3,6 +3,7 @@
 > Uso avançado do Gulp
 > - Espalhando o Gulp
 >   - definição das tarefas em múltiplos arquivos no diretório [./gulp/tasks](gulp/tasks)
+>     - cada arquivo de tarefas gulp precisa solicitar o `gulp` e o `$.js` (ex.: [./gulp/tasks/clean.js](gulp/tasks/clean.js#L2-L3))
 >   - configurações definidas no arquivo [./gulp/config.js](gulp/config.js)
 >   - utilidades definidas no arquivo [./gulp/$.js](gulp/$.js)
 >     - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 2 do ./gulp/$.js](gulp/%24.js#L2)
