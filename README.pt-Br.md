@@ -11,6 +11,15 @@
 * [04](04) - aprimorado
 
 
+## Links
+
+* [Gulp | Medium by @contrahacks](https://medium.com/@contrahacks/gulp-3828e8126466) - The vision, history, and future of the project
+
+* [[GitHub] osscafe / gulp-cheatsheet](https://github.com/osscafe/gulp-cheatsheet) - A cheatsheet for gulp.js
+
+* [Gulpfiction](http://gulpfiction.divshot.io/) - Visual web editor to get started with Gulp
+
+
 ## Licença
 
 - [MIT](LICENSE)
