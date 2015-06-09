@@ -8,6 +8,7 @@
 > - used [lazypipe](https://github.com/OverZealous/lazypipe) to share and reuse pipeline
 >   - jshint at [gulpfile.js line 122](gulpfile.js#L122)
 >   - lintspaces at [gulpfile.js line 145](gulpfile.js#L145)
+>   - `$.streams.` defined on utilities code block at [gulpfile.js line 23](gulpfile.js#L23)
 
 
 ## Prerequisites
