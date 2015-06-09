@@ -56,7 +56,7 @@ npm start
 gulp
 ```
 
-* build
+* build (production version)
 
 ```bash
 gulp release
