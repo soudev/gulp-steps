@@ -1,5 +1,24 @@
 # gulp-steps : 04 - enhanced
 
+> Enhanced usage of Gulp
+> - [tools/](tools)
+>   - [gulp/](tools/gulp)
+>     - [helpers](tools/gulp/helpers)
+>       - [$.js](tools/gulp/helpers/$.js) - gulp utilities
+>         - gulp plugins loaded with [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) at [$.js line 2](tools/gulp/helpers/$.js#L2)
+>         - tools and gulp settings loaded at [$.js line 29](tools/gulp/helpers/$.js#L29)
+>       - [loadTasks.js](tools/helpers/loadTasks.js) - load gulp tasks from [given directory](tools/gulp/helpers/loadTasks.js#L7)
+>     - [tasks/](tools/gulp/tasks) splitted into multiple files
+>       - each gulp tasks file receive from [tasks loader `tools/gulp/helpers/loadTasks.js`](tools/helpers/loadTasks.js#L16) `gulp` and `$` as parameters (ex.: [clean.js](tools/gulp/tasks/clean.js#L1))
+>   - [config.js](tools/config.js) - tools and gulp settings
+> - gulpfile.js
+>   - gulp tasks files loaded with [./tools/gulp/helpers/loadTasks.js](tools/gulp/helpers/loadTasks.js) at [gulpfile.js line 8](gulpfile.js#L8)
+>   - gulp default and main tasks defined on [./tools/gulp/tasks/default.js](tools/gulp/tasks/default.js)
+> - used [lazypipe](https://github.com/OverZealous/lazypipe) to share and reuse pipeline
+>   - jshint at [./tools/gulp/tasks/jshint.js line 3](tools/gulp/tasks/jshint.js#L3)
+>   - lintspaces at [./tools/gulp/tasks/lintspaces.js line 3](tools/gulp/tasks/lintspaces.js#L3)
+>   - `$.streams.` defined on utilities [./tools/gulp/helpers/$.js line 34](tools/gulp/helpers/$.js#L34)
+
 
 ## Prerequisites
 
@@ -39,7 +58,7 @@ npm start
 gulp
 ```
 
-* build
+* build (production version)
 
 ```bash
 gulp release
