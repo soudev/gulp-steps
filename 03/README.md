@@ -11,6 +11,10 @@
 >   - gulp tasks files loaded with [requireDir](https://github.com/aseemk/requireDir) at [gulpfile.js line 7](gulpfile.js#L7)
 >   - gulp ultilities `./gulp/$.js` loaded at [gulpfile.js line 3](gulpfile.js#L3)
 >   - gulp default and main tasks defined at [gulpfile.js lines 12-26](gulpfile.js#L12-L26)
+> - used [lazypipe](https://github.com/OverZealous/lazypipe) to share and reuse pipeline
+>   - jshint at [./gulp/tasks/jshint.js line 7](gulp/tasks/jshint.js#L7)
+>   - lintspaces at [./gulp/tasks/lintspaces.js line 7](gulp/tasks/lintspaces.js#L7)
+>   - `$.streams.` defined on utilities [./gulp/$.js line 21](gulp/%24.js#L21)
 
 
 ## Prerequisites
