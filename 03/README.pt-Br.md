@@ -19,7 +19,7 @@
 
 ## Pré-requisitos
 
-* Necessário ter o [Git](http://git-scm.com/) instalad
+* Necessário ter o [Git](http://git-scm.com/) instalado
 
 * Necessário ter o [node.js (v0.10.x ou superior)](http://nodejs.org/) instalado com o npm (Node Package Manager)
 
