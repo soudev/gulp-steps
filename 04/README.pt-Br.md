@@ -9,7 +9,7 @@
 >         - as configurações das ferramentas e do gulp são carregadas na [linha 29 do $.js](tools/gulp/helpers/$.js#L29)
 >       - [loadTasks.js](tools/gulp/helpers/loadTasks.js) - serviço para carregar as tarefas do gulp a partir de um [diretório especificado](tools/gulp/helpers/loadTasks.js#L7)
 >     - [tasks/](tools/gulp/tasks) - tarefas do gulp separadas em múltiplos arquivos
->       - cada arquivo de tarefas do gulp recebe como parâmetros `gulp` e `$` do [carregador de tarefas `tools/gulp/helpers/loadTasks.js`](tools/helpers/loadTasks.js#L16) (ex.: [clean.js](tools/gulp/tasks/clean.js#L1))
+>       - cada arquivo de tarefas do gulp recebe como parâmetros `gulp` e `$` do [carregador de tarefas `tools/gulp/helpers/loadTasks.js`](tools/gulp/helpers/loadTasks.js#L16) (ex.: [clean.js](tools/gulp/tasks/clean.js#L1))
 >   - [config.js](tools/config.js) - configurações das ferramentas e do gulp
 > - gulpfile.js
 >   - os arquivos com as tarefas do gulp são carregados com o [./tools/gulp/helpers/loadTasks.js](tools/gulp/helpers/loadTasks.js) na [linha 8 do gulpfile.js](gulpfile.js#L8)

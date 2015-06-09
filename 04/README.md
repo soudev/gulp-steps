@@ -9,7 +9,7 @@
 >         - tools and gulp settings loaded at [$.js line 29](tools/gulp/helpers/$.js#L29)
 >       - [loadTasks.js](tools/gulp/helpers/loadTasks.js) - load gulp tasks from [given directory](tools/gulp/helpers/loadTasks.js#L7)
 >     - [tasks/](tools/gulp/tasks) - gulp tasks splitted into multiple files
->       - each gulp tasks file receive from [tasks loader `tools/gulp/helpers/loadTasks.js`](tools/helpers/loadTasks.js#L16) `gulp` and `$` as parameters (ex.: [clean.js](tools/gulp/tasks/clean.js#L1))
+>       - each gulp tasks file receive from [tasks loader `tools/gulp/helpers/loadTasks.js`](tools/gulp/helpers/loadTasks.js#L16) `gulp` and `$` as parameters (ex.: [clean.js](tools/gulp/tasks/clean.js#L1))
 >   - [config.js](tools/config.js) - tools and gulp settings
 > - gulpfile.js
 >   - gulp tasks files loaded with [./tools/gulp/helpers/loadTasks.js](tools/gulp/helpers/loadTasks.js) at [gulpfile.js line 8](gulpfile.js#L8)
