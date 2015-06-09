@@ -5,7 +5,7 @@
 >   - definição das tarefas em múltiplos arquivos no diretório [./gulp/tasks](gulp/tasks)
 >   - configurações definidas no arquivo [./gulp/config.js](gulp/config.js)
 >   - utilidades definidas no arquivo [./gulp/$.js](gulp/$.js)
->     - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 2 do arquivo ./gulp/$.js](gulp/%24.js#L2)
+>     - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 2 do ./gulp/$.js](gulp/%24.js#L2)
 >     - configurações do gulp carregado na [linha 16 do ./gulp/$.js](gulp/%24.js#L16)
 > - gulpfile.js
 >   - arquivos das tarefas do gulp carregados com [requireDir](https://github.com/aseemk/requireDir) na [linha 7 do gulpfile.js](gulpfile.js#L7)
