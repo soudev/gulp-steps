@@ -5,6 +5,9 @@
 > - utilities code block defined at [gulpfile.js lines 5-53](gulpfile.js#L5-L53)
 >   - gulp plugin loaded with [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) at [gulpfile.js line 7](gulpfile.js#L7)
 > - setting centralized in one code block at [gulpfile.js lines 55-90](gulpfile.js#L55-L90)
+> - used [lazypipe](https://github.com/OverZealous/lazypipe) to share and reuse pipeline
+>   - jshint at [gulpfile.js line 122](gulpfile.js#L122)
+>   - lintspaces at [gulpfile.js line 145](gulpfile.js#L145)
 
 
 ## Prerequisites
