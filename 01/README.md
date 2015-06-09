@@ -132,4 +132,4 @@ bower install \
 
 ## License
 
-- [MIT](LICENSE)
+- [MIT](../LICENSE)
