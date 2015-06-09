@@ -8,6 +8,8 @@
 > - utilizado o [lazypipe](https://github.com/OverZealous/lazypipe) para compartilhar e reutilizar processamentos
 >   - jshint na [linha 122 do gulpfile.js](gulpfile.js#L122)
 >   - lintspaces na [linha 145 do gulpfile.js](gulpfile.js#L145)
+>   - `$.streams.` definido no bloco de código de utilidades na [linha 23 do gulpfile.js](gulpfile.js#L23)
+
 
 ## Pré-requisitos
 
