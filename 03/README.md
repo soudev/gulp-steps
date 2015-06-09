@@ -6,7 +6,7 @@
 >   - settings defined on file [./gulp/config.js](gulp/config.js)
 >   - utilities defined on file [./gulp/$.js](gulp/$.js)
 >     - gulp plugin loaded with [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) at [./gulp/$.js line 2](gulp/%24.js#L2)
->     - gulp settings loaded at [./gulp/$.js at 16](gulp/%24.js#L16)
+>     - gulp settings loaded at [./gulp/$.js line 16](gulp/%24.js#L16)
 > - gulpfile.js
 >   - gulp tasks files loaded with [requireDir](https://github.com/aseemk/requireDir) at [gulpfile.js line 7](gulpfile.js#L7)
 >   - gulp ultilities `./gulp/$.js` loaded at [gulpfile.js line 3](gulpfile.js#L3)
