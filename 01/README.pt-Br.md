@@ -2,7 +2,7 @@
 
 > Uso básico do Gulp
 > - todas as tarefas estão definidas diretamente no [gulpfile.js](gulpfile.js#L30)
-> - plugins do gulp e ultilidades definidas no início do [gulpfile.js](gulpfile.js#L2-L27)
+> - os plugins do gulp e ultilidades estão definidas no início do [gulpfile.js](gulpfile.js#L2-L27)
 > - as configurações estão espalhadas nas tarefas
 
 

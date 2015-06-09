@@ -2,9 +2,9 @@
 
 > Uso intermediário do Gulp
 > - todas as tarefas estão definidas diretamente no [gulpfile.js](gulpfile.js#L92)
-> - bloco de código de utilidades definido nas [linhas 5-53 do gulpfile.js](gulpfile.js#L5-L53)
->   - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 7 do gulpfile.js](gulpfile.js#L7)
-> - configurações centralizadas em um bloco de código nas [linhas 55-90 do gulpfile.js](gulpfile.js#L55-L90)
+> - bloco de código com utilidades estão definidas nas [linhas 5-53 do gulpfile.js](gulpfile.js#L5-L53)
+>   - os plugins do gulp são carregados com o [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 7 do gulpfile.js](gulpfile.js#L7)
+> - as configurações estão centralizadas em um bloco de código nas [linhas 55-90 do gulpfile.js](gulpfile.js#L55-L90)
 > - utilizado o [lazypipe](https://github.com/OverZealous/lazypipe) para compartilhar e reutilizar processamentos
 >   - jshint na [linha 122 do gulpfile.js](gulpfile.js#L122)
 >   - lintspaces na [linha 145 do gulpfile.js](gulpfile.js#L145)

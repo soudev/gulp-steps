@@ -6,12 +6,12 @@
 >     - cada arquivo de tarefas gulp precisa solicitar o `gulp` e o `$.js` (ex.: [./gulp/tasks/clean.js](gulp/tasks/clean.js#L2-L3))
 >   - configurações definidas no arquivo [./gulp/config.js](gulp/config.js)
 >   - utilidades definidas no arquivo [./gulp/$.js](gulp/$.js)
->     - plugins do gulp carregados com [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 2 do ./gulp/$.js](gulp/%24.js#L2)
->     - configurações para as tarefas do gulp carregadas na [linha 16 do ./gulp/$.js](gulp/%24.js#L16)
+>     - os plugins do gulp são carregados com o [gulp-load-plugins](https://github.com/jackfranklin/gulp-load-plugins) na [linha 2 do ./gulp/$.js](gulp/%24.js#L2)
+>     - as configurações para as tarefas do gulp são carregadas na [linha 16 do ./gulp/$.js](gulp/%24.js#L16)
 > - gulpfile.js
->   - arquivos com as tarefas do gulp carregados com o [requireDir](https://github.com/aseemk/requireDir) na [linha 7 do gulpfile.js](gulpfile.js#L7)
->   - ultidades `./gulp/$.js` para o gulp carregadas na [linha 3 do gulpfile.js](gulpfile.js#L3)
->   - definições das tarefas principais e da tarefa default(padrão) do gulp nas [linhas 12-26 do gulpfile.js](gulpfile.js#L12-L26)
+>   - os arquivos com as tarefas do gulp são carregados com o [requireDir](https://github.com/aseemk/requireDir) na [linha 7 do gulpfile.js](gulpfile.js#L7)
+>   - ultidades `./gulp/$.js` para o gulp são carregadas na [linha 3 do gulpfile.js](gulpfile.js#L3)
+>   - as definições das tarefas principais e da tarefa default(padrão) do gulp estão nas [linhas 12-26 do gulpfile.js](gulpfile.js#L12-L26)
 > - utilizado o [lazypipe](https://github.com/OverZealous/lazypipe) para compartilhar e reutilizar processamentos
 >   - jshint na [linha 7 do ./gulp/tasks/jshint.js](gulp/tasks/jshint.js#L7)
 >   - lintspaces na [linha 7 do ./gulp/tasks/lintspaces.js](gulp/tasks/lintspaces.js#L7)
