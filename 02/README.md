@@ -94,8 +94,6 @@ touch gulpfile.js
 
 bower init
 
-touch .bowerrc
-
 bower install \
   jquery \
   --save
